@@ -7,7 +7,7 @@ let men = [
 	},
 	{
 		name: 'Trump',
-		mortal: true,
+		mortal: false,
 		dead: false,
 	}
 ];
@@ -51,4 +51,17 @@ if (socratesIsMortal) {
 } else {
 	console.log('I am not sure if Socrates is mortal or not');
 }
-console.log("But Socrates' ideas will live for ever");
+const isPersonMortal = (man) => man.mortal;
+const isNameMortal = (name) => {
+	
+	person = men.filter( (man) => {return (man.name === name);});
+	if (person.length==0) {
+return null;
+}
+return person[0].mortal;
+};
+console.log('============');
+names = ['Trump','Socrates','Stranger'];
+names.forEach( (name) => {
+	console.log(name + " is mortal: " + isNameMortal(name));
+});
